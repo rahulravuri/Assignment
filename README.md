@@ -2,6 +2,9 @@
 
 ## Task 1
 Create a Spark DataFrame using a data file downloaded from [Amazon Product Data](http://jmcauley.ucsd.edu/data/amazon/links.html). Instantiate a SparkSession named `spark` and create a DataFrame `df` from the data file.
+### Note:we have downloaded Amazon review data 
+#### format
+{"overall": 5.0, "verified": true, "reviewTime": "08 4, 2014", "reviewerID": "A24E3SXTC62LJI", "asin": "7508492919", "style": {"Color:": " Bling"}, "reviewerName": "Claudia Valdivia", "reviewText": "Looks even better in person. Be careful to not drop your phone so often because the rhinestones will fall off (duh). More of a decorative case than it is protective, but I will say that it fits perfectly and securely on my phone. Overall, very pleased with this purchase.", "summary": "Can't stop won't stop looking at it", "unixReviewTime": 1407110400}
 
 ## Task 2, 3, 4
 1. **Item with Least Rating:** Group the DataFrame `df` by item ID and calculate the average ratings for each item. Identify the item with the minimum average rating.
@@ -32,7 +35,9 @@ Make sure to check the data file path and adjust it accordingly in the code.
 
 ## Task 1
 Create a Spark DataFrame using a data file downloaded from [Amazon Product Data](http://jmcauley.ucsd.edu/data/amazon/links.html). Instantiate a SparkSession named `spark` and create a DataFrame `df` from the data file.
-
+### Note:we have downloaded Amazon review data 
+#### format
+{"overall": 5.0, "verified": true, "reviewTime": "08 4, 2014", "reviewerID": "A24E3SXTC62LJI", "asin": "7508492919", "style": {"Color:": " Bling"}, "reviewerName": "Claudia Valdivia", "reviewText": "Looks even better in person. Be careful to not drop your phone so often because the rhinestones will fall off (duh). More of a decorative case than it is protective, but I will say that it fits perfectly and securely on my phone. Overall, very pleased with this purchase.", "summary": "Can't stop won't stop looking at it", "unixReviewTime": 1407110400}
 ## Task 2
 Transform: Change the date format to MM-DD-YYYY using the `to_date` function provided in `pyspark.sql.functions`.
 
