@@ -1,16 +1,49 @@
-# Assignment
-We are Provided with 2 Assignments 
-#Assignment 1:
-Task 1 : Create a Spark dataframe using datafile downloaded from http://jmcauley.ucsd.edu/data/amazon/links.html. 
-  We Have created sparksession instance on variable spark and using spark we have created dataframe df from datafile
-Task 2,3,4:Item having the least rating ,Item having most rating and Item having the longest reviews. 
-  To get max rated Item and min rated item we have grouped df on basis of itemid and found average of ratings for each item, then by chaecking which avg value is max and min we found the respective items.
-  To get item with max length first we created a column which stored length of revies and using this column we found max length and found respective item
-Task5:  Transform: change the date MM-DD-YYYY format.
-  Using to_date function pre defind in pyspark.sql.functions we have converted date format
-Task6:Show a desired data frame operation which you learnt recently.
-  I have created UDF operation on data frame which basically check if provided review is verified user review or not. By checking column verified it will identify if review is valid or not, once it confirms it return values (''verified user '+Userid)' , 'Unverified User '+ Userid')
-Task7:Convert the whole file into Parquet file after transforming.
-  We have created Parquet file using dataframe.write.parquet functionality.
+# Assignment 1
 
-  
+## Task 1
+Create a Spark DataFrame using a data file downloaded from [Amazon Product Data](http://jmcauley.ucsd.edu/data/amazon/links.html). Instantiate a SparkSession named `spark` and create a DataFrame `df` from the data file.
+
+## Task 2, 3, 4
+1. **Item with Least Rating:** Group the DataFrame `df` by item ID and calculate the average ratings for each item. Identify the item with the minimum average rating.
+2. **Item with Most Rating:** Group the DataFrame `df` by item ID and calculate the average ratings for each item. Identify the item with the maximum average rating.
+3. **Item with Longest Reviews:** Create a new column to store the length of reviews. Identify the item with the maximum review length.
+
+## Task 5
+Transform: Change the date format to MM-DD-YYYY using the `to_date` function provided in `pyspark.sql.functions`.
+
+## Task 6
+Show a DataFrame operation learned recently:
+- Create a User-Defined Function (UDF) on the DataFrame. The UDF checks whether the provided review is from a verified user or not. It returns values like `'Verified User ' + UserId` or `'Unverified User ' + UserId` based on the verification status.
+
+## Task 7
+Convert the entire DataFrame into a Parquet file after performing transformations. Use the `write.parquet` functionality.
+
+### How to Run
+1. Download the Amazon Product Data from [here](http://jmcauley.ucsd.edu/data/amazon/links.html).
+2. Set up a SparkSession named `spark`.
+3. Execute the provided tasks sequentially in a PySpark environment.
+
+### Note
+Make sure to check the data file path and adjust it accordingly in the code.
+
+
+
+# Assignment 2
+
+## Task 1
+Create a Spark DataFrame using a data file downloaded from [Amazon Product Data](http://jmcauley.ucsd.edu/data/amazon/links.html). Instantiate a SparkSession named `spark` and create a DataFrame `df` from the data file.
+
+## Task 2
+Transform: Change the date format to MM-DD-YYYY using the `to_date` function provided in `pyspark.sql.functions`.
+
+## Task 3
+Transform: Save the data into a table (PostgreSQL/SQL Server)
+
+```python
+# Note: Replace placeholders with your actual database connection details
+
+#  PostgreSQL
+df.write.format("jdbc").option("url", "jdbc:postgresql://your-postgres-host:your-postgres-port/your-database").option("dbtable", "your-table").option("user", "your-username").option("password", "your-password").mode("overwrite").save()
+```
+## Task 4
+Convert the entire DataFrame into a Parquet file after performing transformations. Use the `write.parquet` functionality.
